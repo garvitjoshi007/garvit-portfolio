@@ -2,15 +2,29 @@
 
 import { systemMetadata } from '@/lib/data'
 import { StatusBadge } from '@/components/status-badge'
-import { Activity, Server, GitBranch, AlertCircle } from 'lucide-react'
+import { Activity, Server, GitBranch, AlertCircle, X } from 'lucide-react'
+import { useState } from 'react'
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Global Header Bar */}
       <header className="border-b border-border px-6 py-4 sticky top-0 z-40 bg-background/80 backdrop-blur-xs">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="hover:opacity-80 transition-opacity cursor-pointer"
+              aria-label="View profile photo"
+            >
+              <img
+                src="/profile.png"
+                alt="Garvit Joshi"
+                className="w-10 h-10 rounded-full border border-border object-cover"
+              />
+            </button>
             <div className="font-mono font-bold text-lg">portfolio.garvit</div>
             <div className="text-xs text-muted-foreground font-mono">v{systemMetadata.version.replace('v', '')}</div>
           </div>
@@ -160,6 +174,32 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Profile Photo Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="relative bg-card rounded-lg border border-border max-w-2xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 p-2 hover:bg-primary/10 rounded-lg transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img
+              src="/profile.png"
+              alt="Garvit Joshi"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </main>
   )
 }
