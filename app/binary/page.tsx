@@ -1,6 +1,6 @@
 'use client'
 
-import { Download, FileText, ExternalLink } from 'lucide-react'
+import { FileText, ExternalLink } from 'lucide-react'
 
 export default function Binary() {
   return (
@@ -28,15 +28,16 @@ export default function Binary() {
             </p>
             <div className="space-y-3">
               <a
-                href="/Resume_2026.pdf"
-                download="Garvit_Joshi_Resume_2026.pdf"
+                href="https://drive.google.com/file/d/10aGLdXvAwxLy7DSfbxiCvuk8spXa2vvz/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-between w-full px-4 py-3 bg-primary text-background font-mono font-semibold rounded hover:bg-primary/90 transition-colors"
               >
-                <span>Download PDF</span>
-                <Download className="w-4 h-4" />
+                <span>View Resume</span>
+                <ExternalLink className="w-4 h-4" />
               </a>
               <div className="text-xs text-muted-foreground font-mono text-center">
-                Size: ~500 KB • Format: PDF
+                Opens in Google Drive
               </div>
             </div>
           </div>
