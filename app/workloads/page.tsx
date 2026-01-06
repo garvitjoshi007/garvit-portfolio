@@ -16,7 +16,7 @@ export default function Workloads() {
       </header>
       <div className="max-w-7xl mx-auto px-6 py-16">
         <h1 className="text-5xl font-bold font-mono uppercase mb-2">Production Workloads</h1>
-        <p className="text-muted-foreground font-mono text-sm mb-12">Service status • Projects • Open source</p>
+        <p className="text-muted-foreground font-mono text-base mb-12">Service status • Projects • Open source</p>
         
         <div className="space-y-6">
           {workloads.map((workload) => (
@@ -25,24 +25,24 @@ export default function Workloads() {
                 <div>
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="text-2xl font-bold font-mono">{workload.name}</h3>
-                    <span className="text-xs font-mono text-muted-foreground bg-muted px-2 py-1 rounded">
+                    <span className="text-sm font-mono text-muted-foreground bg-muted px-2 py-1 rounded">
                       v{workload.version}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-3">{workload.description}</p>
+                  <p className="text-base text-muted-foreground mb-3">{workload.description}</p>
                 </div>
                 <StatusBadge status={workload.health} showDot />
               </div>
 
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <div className="text-xs font-mono uppercase text-muted-foreground tracking-widest mb-1">
+                  <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-1">
                     Uptime
                   </div>
                   <div className="text-lg font-bold font-mono">{workload.uptime}</div>
                 </div>
                 <div>
-                  <div className="text-xs font-mono uppercase text-muted-foreground tracking-widest mb-1">
+                  <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-1">
                     Status
                   </div>
                   <div className="text-lg font-bold font-mono capitalize">{workload.status}</div>
@@ -50,14 +50,14 @@ export default function Workloads() {
               </div>
 
               <div className="mb-4">
-                <div className="text-xs font-mono uppercase text-muted-foreground tracking-widest mb-2">
+                <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">
                   Stack
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {workload.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-primary/10 border border-primary/30 rounded text-xs font-mono text-primary"
+                      className="px-2 py-1 bg-primary/10 border border-primary/30 rounded text-sm font-mono text-primary"
                     >
                       {tech}
                     </span>
@@ -93,7 +93,7 @@ export default function Workloads() {
       </div>
 
       <footer className="border-t border-border px-6 py-8 bg-background/50 mt-16">
-        <div className="max-w-7xl mx-auto text-xs text-muted-foreground font-mono">
+        <div className="max-w-7xl mx-auto text-sm text-muted-foreground font-mono">
           <div>Active Workloads: {workloads.filter(w => w.status === 'active').length}</div>
         </div>
       </footer>

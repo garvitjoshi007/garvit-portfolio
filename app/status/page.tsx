@@ -16,24 +16,24 @@ export default function Status() {
       </header>
       <div className="max-w-7xl mx-auto px-6 py-16">
         <h1 className="text-5xl font-bold font-mono uppercase mb-2">System Health</h1>
-        <p className="text-muted-foreground font-mono text-sm mb-12">/status • Synthetic metrics • Uptime dashboard</p>
+        <p className="text-muted-foreground font-mono text-base mb-12">/status • Synthetic metrics • Uptime dashboard</p>
         
         {/* System Status Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
           <div className="border border-border rounded-lg p-4 bg-card">
-            <div className="text-xs font-mono uppercase text-muted-foreground tracking-widest mb-2">Version</div>
+            <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">Version</div>
             <div className="text-2xl font-bold font-mono">{systemMetadata.version}</div>
           </div>
           <div className="border border-border rounded-lg p-4 bg-card">
-            <div className="text-xs font-mono uppercase text-muted-foreground tracking-widest mb-2">Uptime</div>
+            <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">Uptime</div>
             <div className="text-2xl font-bold font-mono">{systemMetadata.uptime}</div>
           </div>
           <div className="border border-border rounded-lg p-4 bg-card">
-            <div className="text-xs font-mono uppercase text-muted-foreground tracking-widest mb-2">Region</div>
+            <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">Region</div>
             <div className="text-2xl font-bold font-mono">{systemMetadata.region}</div>
           </div>
           <div className="border border-border rounded-lg p-4 bg-card">
-            <div className="text-xs font-mono uppercase text-muted-foreground tracking-widest mb-2">MTTR</div>
+            <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">MTTR</div>
             <div className="text-2xl font-bold font-mono">{systemMetadata.mttr}</div>
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function Status() {
             <h2 className="text-xl font-bold font-mono">Overall Status</h2>
           </div>
           <StatusBadge status={systemMetadata.status} />
-          <div className="text-sm text-muted-foreground font-mono mt-4">
+          <div className="text-base text-muted-foreground font-mono mt-4">
             All systems operational • Last check: {new Date(systemMetadata.lastDeploy).toISOString().split('T')[0]}
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function Status() {
               <div key={workload.id} className="border border-border rounded-lg p-4 bg-card flex items-center justify-between">
                 <div>
                   <div className="font-mono font-semibold">{workload.name}</div>
-                  <div className="text-xs text-muted-foreground font-mono">v{workload.version} • {workload.status}</div>
+                  <div className="text-sm text-muted-foreground font-mono">v{workload.version} • {workload.status}</div>
                 </div>
                 <StatusBadge status={workload.health} showDot />
               </div>
@@ -72,7 +72,7 @@ export default function Status() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {capabilities.map((cap) => (
               <div key={cap.id} className="border border-border rounded-lg p-3 bg-card text-center hover:border-primary/50 transition-colors">
-                <div className="font-mono text-sm font-semibold mb-2">{cap.name}</div>
+                <div className="font-mono text-base font-semibold mb-2">{cap.name}</div>
                 <StatusBadge status={cap.status} label={cap.tier} showDot={false} />
               </div>
             ))}
@@ -81,7 +81,7 @@ export default function Status() {
       </div>
 
       <footer className="border-t border-border px-6 py-8 bg-background/50 mt-16">
-        <div className="max-w-7xl mx-auto text-xs text-muted-foreground font-mono">
+        <div className="max-w-7xl mx-auto text-sm text-muted-foreground font-mono">
           <div>Healthy Services: {workloads.filter(w => w.health === 'healthy').length}/{workloads.length}</div>
         </div>
       </footer>

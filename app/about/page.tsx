@@ -16,7 +16,10 @@ export default function About() {
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <div className="mb-12">
-          <div className="text-xs font-mono text-muted-foreground uppercase mb-4">Service Description</div>
+          <div className="text-xs font-mono text-primary uppercase tracking-widest mb-2">
+            Garvit Joshi
+          </div>
+          <div className="text-sm font-mono text-muted-foreground uppercase mb-4">Service Description</div>
           <h1 className="text-5xl font-bold font-mono uppercase tracking-tight mb-6">
             About
           </h1>
@@ -51,10 +54,10 @@ export default function About() {
                   { title: 'Languages', items: ['Python', 'Bash', 'SQL', 'C/C++'] },
                 ].map((category) => (
                   <div key={category.title} className="border border-border rounded-lg p-4 bg-card">
-                    <h3 className="font-mono font-semibold text-sm mb-3">{category.title}</h3>
+                    <h3 className="font-mono font-semibold text-base mb-3">{category.title}</h3>
                     <ul className="space-y-2">
                       {category.items.map((item) => (
-                        <li key={item} className="text-sm text-foreground/70">
+                        <li key={item} className="text-base text-foreground/70">
                           • {item}
                         </li>
                       ))}
@@ -70,8 +73,8 @@ export default function About() {
               </h2>
               <div className="border border-border rounded-lg p-4 bg-card">
                 <div className="font-mono font-semibold mb-1">B.E. Mechanical Engineering</div>
-                <div className="text-sm text-muted-foreground">R.V. College of Engineering (2019-2023)</div>
-                <div className="text-sm text-foreground/70 mt-3">
+                <div className="text-base text-muted-foreground">R.V. College of Engineering (2019-2023)</div>
+                <div className="text-base text-foreground/70 mt-3">
                   Focus: Systems Programming, Distributed Systems, Machine Learning, Computational Methods
                 </div>
               </div>

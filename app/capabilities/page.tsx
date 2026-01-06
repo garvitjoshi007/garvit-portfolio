@@ -70,7 +70,7 @@ export default function Capabilities() {
       </div>
 
       <footer className="border-t border-border px-6 py-8 bg-background/50 mt-16">
-        <div className="max-w-7xl mx-auto text-xs text-muted-foreground font-mono">
+        <div className="max-w-7xl mx-auto text-sm text-muted-foreground font-mono">
           <div>Total Capabilities: {capabilities.length}</div>
         </div>
       </footer>

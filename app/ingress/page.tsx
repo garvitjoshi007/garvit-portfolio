@@ -14,20 +14,20 @@ export default function Ingress() {
       </header>
       <div className="max-w-7xl mx-auto px-6 py-16">
         <h1 className="text-5xl font-bold font-mono uppercase mb-2">Support Channel</h1>
-        <p className="text-muted-foreground font-mono text-sm mb-12">/ingress • Contact • Response SLA</p>
+        <p className="text-muted-foreground font-mono text-base mb-12">/ingress • Contact • Response SLA</p>
         
         {/* Primary Contact Methods */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <a
-            href="mailto:garvjoshi2001@gmail.com"
+            href="mailto:work@garvitjoshi.dev"
             className="border border-border rounded-lg p-8 bg-card hover:border-primary/50 transition-colors group"
           >
             <div className="flex items-center gap-3 mb-4">
               <Mail className="w-8 h-8 text-primary group-hover:text-primary/80" />
               <h2 className="text-2xl font-bold font-mono">Email</h2>
             </div>
-            <div className="font-mono text-lg mb-4">garvjoshi2001@gmail.com</div>
-            <div className="text-xs text-muted-foreground font-mono">
+            <div className="font-mono text-lg mb-4">work@garvitjoshi.dev</div>
+            <div className="text-sm text-muted-foreground font-mono">
               Response SLA: 24 hours
             </div>
           </a>
@@ -41,7 +41,7 @@ export default function Ingress() {
               <h2 className="text-2xl font-bold font-mono">Phone</h2>
             </div>
             <div className="font-mono text-lg mb-4">+91 9981002442</div>
-            <div className="text-xs text-muted-foreground font-mono">
+            <div className="text-sm text-muted-foreground font-mono">
               Available during IST business hours
             </div>
           </a>
@@ -73,7 +73,7 @@ export default function Ingress() {
               <Linkedin className="w-6 h-6 text-primary" />
               <div>
                 <div className="font-mono font-semibold">LinkedIn</div>
-                <div className="text-xs text-muted-foreground font-mono">linkedin.com/in/garvit-joshi</div>
+                <div className="text-base text-muted-foreground font-mono">linkedin.com/in/garvit-joshi</div>
               </div>
             </a>
           </div>
@@ -106,7 +106,7 @@ export default function Ingress() {
                 <div className="font-mono font-semibold">Weekdays</div>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground font-mono pt-4">
+            <p className="text-base text-muted-foreground font-mono pt-4">
               For urgent matters, please call. For detailed discussions or project inquiries, email is preferred.
             </p>
           </div>

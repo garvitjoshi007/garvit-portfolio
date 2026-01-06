@@ -12,10 +12,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'SRE Portfolio | Garvit Joshi',
+  title: 'Garvit Joshi – SRE Portfolio',
   description:
-    'Enterprise SRE portfolio dashboard - Infrastructure, Reliability, Production Systems',
+    'Garvit Joshi - Enterprise SRE portfolio dashboard. Infrastructure, Reliability, Production Systems.',
   keywords: [
+    'Garvit Joshi',
     'SRE',
     'Infrastructure',
     'DevOps',
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://garvitjoshi.dev',
-    title: 'SRE Portfolio | Garvit Joshi',
-    description: 'Enterprise SRE portfolio dashboard',
+    title: 'Garvit Joshi – SRE Portfolio',
+    description: 'Enterprise SRE portfolio dashboard by Garvit Joshi',
   },
 }
 

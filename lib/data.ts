@@ -8,7 +8,7 @@ import {
 export const systemMetadata: SystemMetadata = {
   version: 'v1.0.0',
   uptime: '99.998%',
-  region: 'ap-south-1',
+  region: 'blr-south-1',
   lastDeploy: '2026-01-06',
   status: 'healthy',
   deploymentSuccess: '100%',

@@ -14,7 +14,7 @@ export default function Deployments() {
       </header>
       <div className="max-w-7xl mx-auto px-6 py-16">
         <h1 className="text-5xl font-bold font-mono uppercase mb-2">Deployment History</h1>
-        <p className="text-muted-foreground font-mono text-sm mb-12">Career timeline • Experience • Impact</p>
+        <p className="text-muted-foreground font-mono text-base mb-12">Career timeline • Experience • Impact</p>
         
         <div className="space-y-8">
           {deployments.map((dep) => (
@@ -67,7 +67,7 @@ export default function Deployments() {
       </div>
 
       <footer className="border-t border-border px-6 py-8 bg-background/50 mt-16">
-        <div className="max-w-7xl mx-auto text-xs text-muted-foreground font-mono">
+        <div className="max-w-7xl mx-auto text-sm text-muted-foreground font-mono">
           <div>Total Deployments: {deployments.length}</div>
         </div>
       </footer>
