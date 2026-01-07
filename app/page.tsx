@@ -96,7 +96,7 @@ export default function Home() {
               </div>
               <div className="border border-border rounded-lg p-6 bg-card hover:border-primary/50 transition-colors">
                 <div className="text-lg font-mono text-muted-foreground mb-3">SERVICE ENDPOINT</div>
-                <div className="text-2xl font-bold font-mono mb-4">production-workloads</div>
+                <div className="text-2xl font-bold font-mono mb-4">project-workloads</div>
                 <StatusBadge status="experimental" label="Experimental" />
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function Home() {
             { label: 'Service Description', route: '/about' },
             { label: 'Capabilities Matrix', route: '/capabilities' },
             { label: 'Deployment History', route: '/deployments' },
-            { label: 'Production Workloads', route: '/workloads' },
+            { label: 'Project Workloads', route: '/workloads' },
             { label: 'System Health', route: '/status' },
             { label: 'Binary Download', route: '/binary' },
             { label: 'Support Channel', route: '/ingress' },

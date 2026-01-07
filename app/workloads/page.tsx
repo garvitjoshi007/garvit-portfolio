@@ -15,7 +15,7 @@ export default function Workloads() {
         </div>
       </header>
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <h1 className="text-5xl font-bold font-mono uppercase mb-2">Production Workloads</h1>
+        <h1 className="text-5xl font-bold font-mono uppercase mb-2">Project Workloads</h1>
         <p className="text-muted-foreground font-mono text-base mb-12">Service status • Projects • Open source</p>
         
         <div className="space-y-6">

@@ -16,7 +16,7 @@ const commands: CommandItem[] = [
   { id: '2', label: 'Service Description', route: '/about', category: 'Navigate' },
   { id: '3', label: 'Capabilities Matrix', route: '/capabilities', category: 'Navigate' },
   { id: '4', label: 'Deployment History', route: '/deployments', category: 'Navigate' },
-  { id: '5', label: 'Production Workloads', route: '/workloads', category: 'Navigate' },
+  { id: '5', label: 'Project Workloads', route: '/workloads', category: 'Navigate' },
   { id: '6', label: 'System Health', route: '/status', category: 'Navigate' },
   { id: '7', label: 'Binary Download', route: '/binary', category: 'Navigate' },
   { id: '8', label: 'Support Channel', route: '/ingress', category: 'Navigate' },
