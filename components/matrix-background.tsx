@@ -12,6 +12,9 @@ export function MatrixBackground() {
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
+    let animationFrameId: number | null = null
+    let intervalId: NodeJS.Timeout | null = null
+
     // Set canvas size with device pixel ratio for better rendering
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1
@@ -20,6 +23,10 @@ export function MatrixBackground() {
       canvas.style.width = window.innerWidth + 'px'
       canvas.style.height = window.innerHeight + 'px'
       ctx.scale(dpr, dpr)
+      
+      // Clear canvas on resize
+      ctx.fillStyle = 'rgba(0, 0, 0, 1)'
+      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
     }
     resizeCanvas()
 
@@ -35,13 +42,14 @@ export function MatrixBackground() {
     const drops: number[] = Array(columns).fill(0)
 
     const draw = () => {
-      // Semi-transparent black background for trail effect
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
+      // Semi-transparent black background for trail effect - this creates the fade
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)'
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
 
       // Green text like matrix
-      ctx.fillStyle = 'rgba(34, 197, 94, 0.35)' // More visible green
+      ctx.fillStyle = 'rgba(34, 197, 94, 0.4)' // Slightly brighter green
       ctx.font = `${fontSize}px monospace`
+      ctx.textBaseline = 'top'
 
       for (let i = 0; i < drops.length; i++) {
         const text = chars[Math.floor(Math.random() * chars.length)]
@@ -59,18 +67,22 @@ export function MatrixBackground() {
       }
     }
 
-    // Animation loop with reduced frequency for performance
-    let frameCount = 0
-    const animationFrame = setInterval(() => {
-      frameCount++
-      if (frameCount % 2 === 0) {
-        // Draw every other frame for lighter effect
-        draw()
-      }
-    }, 50)
+    // Use requestAnimationFrame for smooth animation
+    const animate = () => {
+      draw()
+      animationFrameId = requestAnimationFrame(animate)
+    }
+    
+    // Start animation immediately
+    animate()
 
     return () => {
-      clearInterval(animationFrame)
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId)
+      }
+      if (intervalId !== null) {
+        clearInterval(intervalId)
+      }
       window.removeEventListener('resize', handleResize)
     }
   }, [])
