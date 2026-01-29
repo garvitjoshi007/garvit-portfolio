@@ -60,7 +60,7 @@ export default function Home() {
             <h1 className="text-5xl md:text-6xl font-bold font-mono uppercase tracking-tight mb-6">
               Profile Overview
             </h1>
-            <p className="text-xl text-muted-foreground font-mono leading-relaxed max-w-3xl">
+            <p className="text-lg md:text-xl text-muted-foreground font-mono leading-relaxed">
               Distributed systems engineer • Infrastructure reliability • Production operations
             </p>
           </div>
