@@ -13,7 +13,7 @@ export default function Deployments() {
         </div>
       </header>
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <h1 className="text-5xl font-bold font-mono uppercase mb-2">Deployment History</h1>
+        <h1 className="text-5xl font-bold font-mono uppercase mb-2">Work Experience</h1>
         <p className="text-muted-foreground font-mono text-base mb-12">Career timeline • Experience • Impact</p>
         
         <div className="space-y-8">

@@ -23,7 +23,7 @@ export default function Binary() {
         </div>
       </header>
       <div className="max-w-7xl mx-auto px-6 py-16">
-        <h1 className="text-5xl font-bold font-mono uppercase mb-2">Binary Download</h1>
+        <h1 className="text-5xl font-bold font-mono uppercase mb-2">Resume</h1>
         <p className="text-muted-foreground font-mono text-base mb-12">Resume • CV • Full credentials</p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

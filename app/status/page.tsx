@@ -20,22 +20,6 @@ export default function Status() {
         
         {/* System Status Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12">
-          <div className="border border-border rounded-lg p-4 bg-card">
-            <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">Version</div>
-            <div className="text-2xl font-bold font-mono">{systemMetadata.version}</div>
-          </div>
-          <div className="border border-border rounded-lg p-4 bg-card">
-            <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">Uptime</div>
-            <div className="text-2xl font-bold font-mono">{systemMetadata.uptime}</div>
-          </div>
-          <div className="border border-border rounded-lg p-4 bg-card">
-            <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">Region</div>
-            <div className="text-2xl font-bold font-mono">{systemMetadata.region}</div>
-          </div>
-          <div className="border border-border rounded-lg p-4 bg-card">
-            <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-2">MTTR</div>
-            <div className="text-2xl font-bold font-mono">{systemMetadata.mttr}</div>
-          </div>
         </div>
 
         {/* Overall Status */}
@@ -82,7 +66,6 @@ export default function Status() {
 
       <footer className="border-t border-border px-6 py-8 bg-background/50 mt-16">
         <div className="max-w-7xl mx-auto text-sm text-muted-foreground font-mono">
-          <div>Healthy Services: {workloads.filter(w => w.health === 'healthy').length}/{workloads.length}</div>
         </div>
       </footer>
     </main>

@@ -2,14 +2,24 @@
 
 import { systemMetadata } from '@/lib/data'
 import { StatusBadge } from '@/components/status-badge'
-import { Activity, Server, GitBranch, AlertCircle, X } from 'lucide-react'
+import { Server, X, FileText, Code2, Briefcase, Box, Activity, MessageCircle, User } from 'lucide-react'
 import { useState } from 'react'
+
+const navItems = [
+  { label: 'About Me', route: '/about', icon: User, description: 'Get to know me' },
+  { label: 'Capabilities Matrix', route: '/capabilities', icon: Code2, description: 'Skills & expertise' },
+  { label: 'Work Experience', route: '/deployments', icon: Briefcase, description: 'Career timeline' },
+  { label: 'Project Workloads', route: '/workloads', icon: Box, description: 'Featured projects' },
+  { label: 'System Health', route: '/status', icon: Activity, description: 'Status page' },
+  { label: 'Resume', route: '/binary', icon: FileText, description: 'Download CV' },
+  { label: 'Support Channel', route: '/ingress', icon: MessageCircle, description: 'Get in touch' },
+]
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground flex flex-col">
       {/* Global Header Bar */}
       <header className="border-b border-border px-6 py-4 sticky top-0 z-40 bg-background/80 backdrop-blur-xs">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -39,112 +49,78 @@ export default function Home() {
         </div>
       </header>
 
-      {/* System Overview Section */}
-      <div className="border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="mb-16">
-            <div className="text-xl font-mono text-green-400 uppercase tracking-[0.3em] font-bold mb-4 animate-pulse">
+      {/* Main Content - Grows to fill space */}
+      <div className="flex-grow flex flex-col justify-center">
+        {/* Profile Overview Section */}
+        <div className="max-w-7xl mx-auto w-full px-6 py-16">
+          <div className="mb-12">
+            <div className="text-xl font-mono text-green-400 uppercase tracking-[0.3em] font-bold mb-6 animate-pulse">
               {'> _'} garvit.joshi
             </div>
-            <h1 className="text-4xl font-bold font-mono uppercase tracking-tight mb-4">
-              System Overview
+            <h1 className="text-5xl md:text-6xl font-bold font-mono uppercase tracking-tight mb-6">
+              Profile Overview
             </h1>
-            <p className="text-lg text-muted-foreground font-mono leading-relaxed">
+            <p className="text-xl text-muted-foreground font-mono leading-relaxed max-w-3xl">
               Distributed systems engineer • Infrastructure reliability • Production operations
             </p>
           </div>
 
-          {/* Metrics Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <MetricCard
-              label="Uptime"
-              value={systemMetadata.uptime}
-              icon={<Activity className="w-5 h-5" />}
-            />
-            <MetricCard
-              label="Last Deploy"
-              value={new Date(systemMetadata.lastDeploy).toISOString().split('T')[0]}
-              icon={<GitBranch className="w-5 h-5" />}
-            />
-            <MetricCard
-              label="Deployment Success"
-              value={systemMetadata.deploymentSuccess}
-              icon={<AlertCircle className="w-5 h-5" />}
-            />
-            <MetricCard
-              label="MTTR"
-              value={systemMetadata.mttr}
-              icon={<Server className="w-5 h-5" />}
-            />
-          </div>
-
-          {/* Active Services */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-mono uppercase tracking-widest text-muted-foreground mb-6">
-              Active Services
+          {/* Navigation Grid - More creative layout */}
+          <div className="mt-20">
+            <h2 className="text-2xl font-bold font-mono uppercase tracking-tight mb-12 text-muted-foreground">
+              Navigate
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="border border-border rounded-lg p-6 bg-card hover:border-primary/50 transition-colors">
-                <div className="text-lg font-mono text-muted-foreground mb-3">SERVICE ENDPOINT</div>
-                <div className="text-2xl font-bold font-mono mb-4">system-overview</div>
-                <StatusBadge status="healthy" label="Running" />
-              </div>
-              <div className="border border-border rounded-lg p-6 bg-card hover:border-primary/50 transition-colors">
-                <div className="text-lg font-mono text-muted-foreground mb-3">SERVICE ENDPOINT</div>
-                <div className="text-2xl font-bold font-mono mb-4">capabilities-matrix</div>
-                <StatusBadge status="healthy" label="Running" />
-              </div>
-              <div className="border border-border rounded-lg p-6 bg-card hover:border-primary/50 transition-colors">
-                <div className="text-lg font-mono text-muted-foreground mb-3">SERVICE ENDPOINT</div>
-                <div className="text-2xl font-bold font-mono mb-4">project-workloads</div>
-                <StatusBadge status="experimental" label="Experimental" />
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {navItems.slice(0, 6).map((item) => {
+                const Icon = item.icon
+                return (
+                  <a
+                    key={item.route}
+                    href={item.route}
+                    className="group border border-border rounded-lg p-6 bg-card hover:bg-primary/5 hover:border-primary/50 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-primary/10"
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <Icon className="w-8 h-8 text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all" />
+                    </div>
+                    <h3 className="text-lg font-bold font-mono text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {item.label}
+                    </h3>
+                    <p className="text-sm text-muted-foreground font-mono">
+                      {item.description}
+                    </p>
+                  </a>
+                )
+              })}
+              {/* Support Channel - Featured */}
+              <a
+                href={navItems[6].route}
+                className="group border border-border rounded-lg p-6 bg-gradient-to-br from-primary/10 to-primary/5 hover:from-primary/20 hover:to-primary/10 border-primary/50 hover:border-primary transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-primary/20 md:col-span-2 lg:col-span-1 xl:col-span-1"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <MessageCircle className="w-8 h-8 text-primary group-hover:scale-110 transition-all" />
+                </div>
+                <h3 className="text-lg font-bold font-mono text-primary mb-2">
+                  {navItems[6].label}
+                </h3>
+                <p className="text-sm text-primary/80 font-mono">
+                  {navItems[6].description}
+                </p>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Quick Navigation */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold font-mono uppercase tracking-tight mb-12">
-          Quick Access
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { label: 'Service Description', route: '/about' },
-            { label: 'Capabilities Matrix', route: '/capabilities' },
-            { label: 'Deployment History', route: '/deployments' },
-            { label: 'Project Workloads', route: '/workloads' },
-            { label: 'System Health', route: '/status' },
-            { label: 'Binary Download', route: '/binary' },
-            { label: 'Support Channel', route: '/ingress' },
-          ].map((item) => (
-            <a
-              key={item.route}
-              href={item.route}
-              className="border border-border rounded-lg p-5 bg-card hover:bg-primary/5 hover:border-primary/50 transition-colors text-base font-mono text-foreground font-semibold text-center"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="border-t border-border px-6 py-12 bg-background/50">
+      {/* Footer - Floating at bottom */}
+      <footer className="border-t border-border px-6 py-12 bg-background/50 mt-auto">
         <div className="max-w-7xl mx-auto text-base text-muted-foreground font-mono">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <div className="text-foreground font-semibold mb-4 text-xl">Status</div>
-              <div className="text-base mb-2">Active Services: {systemMetadata.activeServices}</div>
-              <div className="text-base">Uptime: {systemMetadata.uptime}</div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <div className="text-foreground font-semibold mb-4 text-xl">Links</div>
               <div className="mb-3">
                 <a
                   href="https://github.com/garvitjoshi007"
-                  className="hover:text-primary text-base"
+                  className="hover:text-primary transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -154,7 +130,7 @@ export default function Home() {
               <div>
                 <a
                   href="https://linkedin.com/in/garvit-joshi"
-                  className="hover:text-primary text-base"
+                  className="hover:text-primary transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -165,7 +141,7 @@ export default function Home() {
             <div>
               <div className="text-foreground font-semibold mb-4 text-xl">Contact</div>
               <div className="mb-3">
-                <a href="mailto:work@garvitjoshi.dev" className="hover:text-primary text-base">
+                <a href="mailto:work@garvitjoshi.dev" className="hover:text-primary transition-colors">
                   work@garvitjoshi.dev
                 </a>
               </div>
@@ -201,25 +177,5 @@ export default function Home() {
         </div>
       )}
     </main>
-  )
-}
-
-interface MetricCardProps {
-  label: string
-  value: string
-  icon: React.ReactNode
-}
-
-function MetricCard({ label, value, icon }: MetricCardProps) {
-  return (
-    <div className="border border-border rounded-lg p-6 bg-card">
-      <div className="flex items-start justify-between mb-4">
-        <div className="text-base font-mono uppercase text-muted-foreground tracking-wider">
-          {label}
-        </div>
-        <div className="text-muted-foreground">{icon}</div>
-      </div>
-      <div className="text-2xl font-bold font-mono text-foreground">{value}</div>
-    </div>
   )
 }

@@ -305,20 +305,6 @@ export const deployments: Deployment[] = [
 
 export const workloads: Workload[] = [
   {
-    id: 'hostsdb',
-    name: 'HostsDB',
-    description: 'Infrastructure Inventory & Monitoring',
-    longDescription:
-      'Comprehensive system-level monitoring tool leveraging osquery for metrics collection with Elasticsearch and Kibana visualization.',
-    version: '1.2.0',
-    health: 'healthy',
-    status: 'active',
-    uptime: '99.8%',
-    lastUpdated: '2024-01-02',
-    stack: ['osquery', 'Python', 'Elasticsearch', 'Kibana'],
-    repo: 'https://github.com/garvitjoshi007/hostsdb',
-  },
-  {
     id: 'evicta',
     name: 'Evicta',
     description: 'Semantic Inference Cache Engine',

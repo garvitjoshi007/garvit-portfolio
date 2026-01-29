@@ -37,12 +37,6 @@ export default function Workloads() {
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
                   <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-1">
-                    Uptime
-                  </div>
-                  <div className="text-lg font-bold font-mono">{workload.uptime}</div>
-                </div>
-                <div>
-                  <div className="text-sm font-mono uppercase text-muted-foreground tracking-widest mb-1">
                     Status
                   </div>
                   <div className="text-lg font-bold font-mono capitalize">{workload.status}</div>
@@ -94,7 +88,6 @@ export default function Workloads() {
 
       <footer className="border-t border-border px-6 py-8 bg-background/50 mt-16">
         <div className="max-w-7xl mx-auto text-sm text-muted-foreground font-mono">
-          <div>Active Workloads: {workloads.filter(w => w.status === 'active').length}</div>
         </div>
       </footer>
     </main>

@@ -53,9 +53,6 @@ export default function Capabilities() {
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <div className="font-bold font-mono text-lg">{cap.name}</div>
-                        <div className="text-xs text-muted-foreground font-mono mt-1">
-                          Confidence: {cap.confidence}%
-                        </div>
                       </div>
                     </div>
                     <div className="flex gap-2">

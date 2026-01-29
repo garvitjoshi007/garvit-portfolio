@@ -12,13 +12,13 @@ interface CommandItem {
 }
 
 const commands: CommandItem[] = [
-  { id: '1', label: 'System Overview', route: '/', category: 'Navigate' },
-  { id: '2', label: 'Service Description', route: '/about', category: 'Navigate' },
+  { id: '1', label: 'Profile Overview', route: '/', category: 'Navigate' },
+  { id: '2', label: 'About Me', route: '/about', category: 'Navigate' },
   { id: '3', label: 'Capabilities Matrix', route: '/capabilities', category: 'Navigate' },
-  { id: '4', label: 'Deployment History', route: '/deployments', category: 'Navigate' },
+  { id: '4', label: 'Work Experience', route: '/deployments', category: 'Navigate' },
   { id: '5', label: 'Project Workloads', route: '/workloads', category: 'Navigate' },
   { id: '6', label: 'System Health', route: '/status', category: 'Navigate' },
-  { id: '7', label: 'Binary Download', route: '/binary', category: 'Navigate' },
+  { id: '7', label: 'Resume', route: '/binary', category: 'Navigate' },
   { id: '8', label: 'Support Channel', route: '/ingress', category: 'Navigate' },
 ]
 
