@@ -21,12 +21,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col">
       {/* Global Header Bar */}
-      <header className="border-b border-border px-6 py-4 sticky top-0 z-40 bg-background/80 backdrop-blur-xs">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-4">
+      <header className="border-b border-border px-4 md:px-6 py-4 sticky top-0 z-40 bg-background/80 backdrop-blur-xs">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 md:gap-4 min-w-0">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="hover:opacity-80 transition-opacity cursor-pointer"
+              className="hover:opacity-80 transition-opacity cursor-pointer flex-shrink-0"
               aria-label="View profile photo"
             >
               <img
@@ -35,16 +35,16 @@ export default function Home() {
                 className="w-10 h-10 rounded-full border border-border object-cover"
               />
             </button>
-            <div className="font-mono font-bold text-lg">portfolio.garvit</div>
-            <div className="text-xs text-muted-foreground font-mono">v{systemMetadata.version.replace('v', '')}</div>
+            <div className="font-mono font-bold text-base md:text-lg truncate">portfolio.garvit</div>
+            <div className="text-xs text-muted-foreground font-mono hidden sm:inline">v{systemMetadata.version.replace('v', '')}</div>
           </div>
-          <div className="flex items-center gap-6 text-sm">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3 md:gap-6 text-xs md:text-sm flex-shrink-0">
+            <div className="flex items-center gap-2 hidden sm:flex">
               <Server className="w-3 h-3" />
               <span className="text-muted-foreground">{systemMetadata.region}</span>
             </div>
             <StatusBadge status={systemMetadata.status} label="healthy" showDot />
-            <div className="text-muted-foreground">⌘K</div>
+            <div className="text-muted-foreground hidden sm:inline">⌘K</div>
           </div>
         </div>
       </header>
